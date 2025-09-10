@@ -166,7 +166,7 @@
         
         <div class="input-group row-inputs">
             <div>
-                <label for="stopTime"><i class="fas fa-stopwatch"></i> বন্ধ হওয়ার সময়</label>
+                <label for="stopTime"><i class="fas fa-stopwatch"></i> স্টপ টাইম</label>
                 <input type="time" id="stopTime">
             </div>
             <div>
@@ -190,7 +190,7 @@
         <button onclick="calculateLoss()">লস হিসাব করুন</button>
 
         <div id="result-box" style="display: none;">
-            <p>বন্ধ হওয়ার সময়: <span id="displayStopTime">--:--</span></p>
+            <p>স্টপ টাইম: <span id="displayStopTime">--:--</span></p>
             <p>চালু হওয়ার সময়: <span id="displayStartTime">--:--</span></p>
             <p>মোট সময়: <span id="totalTime">0 ঘন্টা 0 মিনিট</span></p>
             <p>মোট প্রোডাকশন লস: <span id="lossValue">0</span> কেজি</p>
@@ -283,7 +283,7 @@
             const timeDifferenceMinutes = timeDifferenceMs / (1000 * 60);
 
             if (timeDifferenceMinutes <= 0) {
-                errorMessage.innerText = "চালু হওয়ার সময় বন্ধ হওয়ার সময়ের পরে হতে হবে।";
+                errorMessage.innerText = "চালু হওয়ার সময় স্টপ টাইমের পরে হতে হবে।";
                 return;
             }
 
