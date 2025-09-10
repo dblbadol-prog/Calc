@@ -190,6 +190,9 @@
         <button onclick="calculateLoss()">লস হিসাব করুন</button>
 
         <div id="result-box" style="display: none;">
+            <p>বন্ধ হওয়ার সময়: <span id="displayStopTime">--:--</span></p>
+            <p>চালু হওয়ার সময়: <span id="displayStartTime">--:--</span></p>
+            <p>মোট সময়: <span id="totalTime">0 ঘন্টা 0 মিনিট</span></p>
             <p>মোট প্রোডাকশন লস: <span id="lossValue">0</span> কেজি</p>
         </div>
     </div>
@@ -286,6 +289,13 @@
 
             const loss = (totalSpeed / 60) * timeDifferenceMinutes;
             const roundedLoss = loss.toFixed(2);
+
+            // Display times and total duration
+            document.getElementById('displayStopTime').innerText = stopTime;
+            document.getElementById('displayStartTime').innerText = startTime;
+            const totalHours = Math.floor(timeDifferenceMinutes / 60);
+            const totalMinutes = Math.round(timeDifferenceMinutes % 60);
+            document.getElementById('totalTime').innerText = `${totalHours} ঘন্টা ${totalMinutes} মিনিট`;
 
             document.getElementById('lossValue').innerText = roundedLoss;
             resultBox.style.display = 'block';
